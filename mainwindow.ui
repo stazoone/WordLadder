@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Word Ladder Game</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <widget class="QTabWidget" name="tabWidget">
+      <property name="currentIndex">
+       <number>1</number>
+      </property>
+      <widget class="QWidget" name="autoTab">
+       <attribute name="title">
+        <string>Auto Mode</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="verticalLayout_auto">
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_auto">
+          <item>
+           <widget class="QLabel" name="label">
+            <property name="text">
+             <string>Word Length:</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QSpinBox" name="wordLengthSpinBox_auto">
+            <property name="minimum">
+             <number>3</number>
+            </property>
+            <property name="maximum">
+             <number>10</number>
+            </property>
+            <property name="value">
+             <number>4</number>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="loadDictButton_auto">
+            <property name="text">
+             <string>Load Dictionary</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_auto_2">
+          <item>
+           <widget class="QLabel" name="label_2">
+            <property name="text">
+             <string>Start Word:</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="startWordLineEdit_auto"/>
+          </item>
+          <item>
+           <widget class="QLabel" name="label_3">
+            <property name="text">
+             <string>Target Word:</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="targetWordLineEdit_auto"/>
+          </item>
+          <item>
+           <widget class="QPushButton" name="findPathButton_auto">
+            <property name="text">
+             <string>Find Path</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <widget class="QLabel" name="statusLabel_auto">
+          <property name="text">
+           <string>Ready</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QListWidget" name="pathListWidget_auto"/>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="playTab">
+       <attribute name="title">
+        <string>Play Mode</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="verticalLayout_play">
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_play">
+          <item>
+           <widget class="QLabel" name="label_4">
+            <property name="text">
+             <string>Player Name:</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="playerNameLineEdit_play"/>
+          </item>
+          <item>
+           <widget class="QLabel" name="label_5">
+            <property name="text">
+             <string>Word Length:</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QSpinBox" name="wordLengthSpinBox_play">
+            <property name="minimum">
+             <number>3</number>
+            </property>
+            <property name="maximum">
+             <number>10</number>
+            </property>
+            <property name="value">
+             <number>4</number>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="startGameButton_play">
+            <property name="text">
+             <string>Start Game</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_play_2">
+          <item>
+           <widget class="QLabel" name="startWordLabel_play">
+            <property name="text">
+             <string>Start: -</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="targetWordLabel_play">
+            <property name="text">
+             <string>Target: -</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="currentWordLabel_play">
+            <property name="text">
+             <string>Current: -</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_play_3">
+          <item>
+           <widget class="QLabel" name="movesLabel_play">
+            <property name="text">
+             <string>Moves: -</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="hintsUsedLabel_play">
+            <property name="text">
+             <string>Hints: -</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_play_4">
+          <item>
+           <widget class="QLabel" name="label_6">
+            <property name="text">
+             <string>Next Word:</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="nextWordLineEdit_play"/>
+          </item>
+          <item>
+           <widget class="QPushButton" name="submitWordButton_play">
+            <property name="text">
+             <string>Submit</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="hintButton_play">
+            <property name="text">
+             <string>Hint</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <widget class="QLabel" name="gameStatusLabel_play">
+          <property name="text">
+           <string>Select word length and player name, then start game.</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QListWidget" name="playerPathListWidget_play"/>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="analyticsTab">
+       <attribute name="title">
+        <string>Analytics</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="verticalLayout_analytics">
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_analytics">
+          <item>
+           <widget class="QLabel" name="label_7">
+            <property name="text">
+             <string>Player Name:</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="playerNameLineEdit_analytics"/>
+          </item>
+          <item>
+           <widget class="QPushButton" name="loadStatsButton_analytics">
+            <property name="text">
+             <string>Load Stats</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <widget class="QTextEdit" name="statsTextEdit_analytics">
+          <property name="readOnly">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>800</width>
+     <height>21</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
