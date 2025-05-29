@@ -82,15 +82,3 @@ The game requires dictionary files named `dict_[length].txt` in the application 
 3. **Analytics**
    - Enter player name to view statistics
    - See game history and performance metrics
-
-## Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request.
-
-## License
-
-[Your chosen license]
-
-## Author
-
-[Your name] 
