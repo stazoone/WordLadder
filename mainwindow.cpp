@@ -127,7 +127,6 @@ bool MainWindow::loadAndBuildDictionary(int length, const QString& statusLabelCo
 void MainWindow::on_wordLengthSpinBox_auto_valueChanged(int length) {
     // Automatically try to load dictionary when length changes
     // Or, require user to click "Load Dictionary"
-    // For now, let's use a separate load button to avoid repeated loading during spin
     ui->findPathButton_auto->setEnabled(false); // Require reload if length changes
     ui->statusLabel_auto->setText("Word length changed. Click 'Load Dictionary'.");
     dictionaryLoaded = false;
@@ -202,10 +201,9 @@ void MainWindow::on_startGameButton_play_clicked() {
         QMessageBox::warning(this, "Player Name", "Please enter your name.");
         return;
     }
-    // Sanitize player name for filename
     currentPlayerName_play.remove(QRegularExpression(QStringLiteral("[^a-zA-Z0-9_]")));
     if (currentPlayerName_play.isEmpty()) {
-        QMessageBox::warning(this, "Player Name", "Player name invalid after sanitization. Use letters, numbers, or underscore.");
+        QMessageBox::warning(this, "Player Name", "Invalid. Use letters, numbers, or underscore.");
         return;
     }
 
@@ -342,7 +340,6 @@ void MainWindow::on_submitWordButton_play_clicked() {
  * @brief Handles the hint button click in play mode
  * 
  * Provides a hint by showing the next word in the optimal path.
- * Increments the hints used counter.
  */
 void MainWindow::on_hintButton_play_clicked() {
     if (playerMoves_play.empty()) return;
@@ -494,7 +491,7 @@ void MainWindow::on_loadStatsButton_analytics_clicked() {
 
     QTextStream in(&file);
     QString allStatsContent = "Game History for " + playerName + ":\n\n";
-    std::set<std::string> uniqueWordsUsed; // Justification: std::set for automatic uniqueness of words.
+    std::set<std::string> uniqueWordsUsed; //std::set for automatic uniqueness of words.
 
     int gamesPlayed = 0;
     int totalUserMoves = 0;
@@ -508,7 +505,7 @@ void MainWindow::on_loadStatsButton_analytics_clicked() {
     while (!in.atEnd()) {
         QString line = in.readLine();
         allStatsContent += line + "\n";
-        QStringList fields = line.split(','); // Simple CSV parsing, assumes no commas in quoted fields for now
+        QStringList fields = line.split(',');
 
         if (fields.size() >= 7) { // DateTime,Start,Target,UserMoves,OptimalMoves,Hints,Path
             gamesPlayed++;
