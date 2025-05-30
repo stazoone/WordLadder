@@ -85,14 +85,14 @@ private:
     WordLadderGame game;
     bool dictionaryLoaded; // Flag to track if a dictionary is loaded for current game logic
 
-    // Game state for Play Mode
-    QString currentPlayerName_play;
-    std::string gameStartWord_play;
-    std::string gameTargetWord_play;
-    std::vector<std::string> playerMoves_play;
-    int hintsUsed_play;
-    QDateTime gameStartTime_play;
-    int optimalMovesForCurrentGame_play;
+    // Play Mode
+    QString currentPlayerName_play; // Player name
+    std::string gameStartWord_play; // Starting word
+    std::string gameTargetWord_play; // Target
+    std::vector<std::string> playerMoves_play; // Number ov moves
+    int hintsUsed_play; // Hints used
+    QDateTime gameStartTime_play; // Time
+    int optimalMovesForCurrentGame_play; // Optimal number of moves
 
     /**
      * @brief Updates the current word display in the UI

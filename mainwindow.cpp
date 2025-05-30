@@ -514,7 +514,7 @@ void MainWindow::on_loadStatsButton_analytics_clicked() {
             totalHints += fields[5].toInt();
 
             // Parse user path for unique words
-            // Assuming path is fields[6] and looks like "\"WORD1 -> WORD2 -> WORD3\""
+            // Assuming path is fields[6] and looks like "\"WORD1 -> WORD2 -> WORD3\"
             QString pathField = fields[6];
             pathField.remove('\"'); // Remove quotes
             QStringList pathWords = pathField.split(" -> ");
