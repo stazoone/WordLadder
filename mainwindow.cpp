@@ -217,7 +217,6 @@ void MainWindow::on_startGameButton_play_clicked() {
         }
     }
 
-    // Try to find a valid word pair with a possible path
     const int MAX_ATTEMPTS = 100;  // Prevent infinite loops
     int attempts = 0;
     bool foundValidPair = false;
@@ -441,11 +440,11 @@ void MainWindow::saveGameResults() {
         userPathList.append(s2q(move));
     }
 
-    out << gameStartTime_play.toString(Qt::ISODate) << ","
-        << s2q(gameStartWord_play) << ","
-        << s2q(gameTargetWord_play) << ","
-        << playerMoves_play.size() - 1 << ","
-        << optimalMovesForCurrentGame_play << ","
+    out << gameStartTime_play.toString(Qt::ISODate) << ", Starting word: "
+        << s2q(gameStartWord_play) << ", Target word: "
+        << s2q(gameTargetWord_play) << ", Moves used: "
+        << playerMoves_play.size() - 1 << ", Optimal Moves: "
+        << optimalMovesForCurrentGame_play << ", Hints used: "
         << hintsUsed_play << ","
         << "\"" << userPathList.join(" -> ") << "\"\n"; // Enclose path in quotes if it contains commas
 
