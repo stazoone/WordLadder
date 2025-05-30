@@ -217,11 +217,10 @@ void MainWindow::on_startGameButton_play_clicked() {
         }
     }
 
-    const int MAX_ATTEMPTS = 100;  // Prevent infinite loops
     int attempts = 0;
     bool foundValidPair = false;
 
-    while (!foundValidPair && attempts < MAX_ATTEMPTS) {
+    while (!foundValidPair) {
         gameStartWord_play = game.getRandomWord();
         gameTargetWord_play = game.getRandomWord();
 
@@ -238,6 +237,10 @@ void MainWindow::on_startGameButton_play_clicked() {
             optimalMovesForCurrentGame_play = path.size() - 1;
         }
         attempts++;
+
+        if(attempts>10000) { // 10000 attempts to find valid game solution
+            break;
+        }
     }
 
     if (!foundValidPair) {
