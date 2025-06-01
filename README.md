@@ -44,7 +44,7 @@ A modern C++ implementation of the classic Word Ladder puzzle game with a Qt-bas
 1. Clone the repository:
    ```bash
    git clone https://github.com/stazoone/WordLadder
-   cd word-ladder-game
+   cd WordLadder
    ```
 
 2. Create a build directory:
