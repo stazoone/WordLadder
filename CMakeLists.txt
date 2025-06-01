@@ -1,11 +1,11 @@
-cmake_minimum_required(VERSION 3.19)
-project(ec4 LANGUAGES CXX)
+cmake_minimum_required(VERSION 3.16)
+project(WordLadder LANGUAGES CXX)
 
 find_package(Qt6 6.5 REQUIRED COMPONENTS Core Widgets)
 
 qt_standard_project_setup()
 
-qt_add_executable(ec4
+qt_add_executable(WordLadder
     WIN32 MACOSX_BUNDLE
     main.cpp
     mainwindow.cpp
@@ -15,7 +15,7 @@ qt_add_executable(ec4
     graph.h
 )
 
-target_link_libraries(ec4
+target_link_libraries(WordLadder
     PRIVATE
         Qt::Core
         Qt::Widgets
@@ -23,14 +23,14 @@ target_link_libraries(ec4
 
 include(GNUInstallDirs)
 
-install(TARGETS ec4
+install(TARGETS WordLadder
     BUNDLE  DESTINATION .
     RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
     LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
 )
 
 qt_generate_deploy_app_script(
-    TARGET ec4
+    TARGET WordLadder
     OUTPUT_SCRIPT deploy_script
     NO_UNSUPPORTED_PLATFORM_ERROR
 )
