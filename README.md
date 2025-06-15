@@ -39,45 +39,11 @@ A modern C++ implementation of the classic Word Ladder puzzle game with a Qt-bas
 - CMake 3.16 or later
 - A C++ compiler with C++17 support (e.g., GCC, MSVC, Clang)
 
-## Building the Project
-
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/stazoone/WordLadder
-   cd WordLadder
-   ```
-
-2. Create a build directory:
-   ```bash
-   mkdir build
-   cd build
-   ```
-
-3. Configure and build:
-   ```bash
-   cmake ..
-   cmake --build .
-   ```
-
-## Running the Application
-
-After building the project, you can run the application:
-
-1. On Windows:
-   ```bash
-   .\Debug\WordLadder.exe
-   ```
-
-2. On Linux/macOS:
-   ```bash
-   ./WordLadder
-   ```
-
-Make sure you have the dictionary files in the same directory as the executable before running the application.
-
 ## Dictionary Files
 
 The game requires dictionary files named `dict_[length].txt` in the application directory, where `[length]` is the word length (e.g., `dict_4.txt` for 4-letter words). Each dictionary file should contain one word per line.
+Make sure you have the dictionary files in the same directory as the executable before running the application.
+
 
 ## How to Play
 
